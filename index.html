@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sukumar Modadugu — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="hero-left">
+        <img class="hero-photo" src="images/portrait.svg" alt="Sukumar Photo">
+        <div class="name-wrap">
+          <h1 class="name">SUKUMAR MODADUGU</h1>
+          <p class="role">AI & Data Science Engineer | Unity Game Developer</p>
+          <p class="location">Kandukur, Andhra Pradesh, India</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="Sukumar_Resume.pdf" download>Download Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a Computer Science student specializing in AI & Data Science with experience in Unity game development.
+            I build ML & NLP projects and interactive Unity experiences. Passionate about learning and solving real-world problems.
+          </p>
+
+          <ul class="quick-stats">
+            <li><strong>Education:</strong> B.Tech — CSE (AI & Data Science)</li>
+            <li><strong>Languages:</strong> English, Telugu, Hindi</li>
+          </ul>
+        </div>
+
+        <div class="photo-collage">
+          <img src="images/project-1.svg" alt="project thumbnail">
+          <img src="images/project-2.svg" alt="project thumbnail">
+          <img src="images/project-3.svg" alt="project thumbnail">
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Technical Skills</h2>
+      <ul class="skills-grid">
+        <li>C, Java, Python, C#</li>
+        <li>HTML, CSS, SQL</li>
+        <li>Unity (C#), AWS (Cloud Foundations)</li>
+        <li>Machine Learning & NLP</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="card">
+          <div class="card-header">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 8 L12 14 L4 8 Z"></path></svg>
+            <h3>Resume Analyzer using AI</h3>
+          </div>
+          <p>NLP-based resume analyzer to extract skills/experience and match against job roles.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"></circle><path d="M4 20c2-4 6-6 8-6s6 2 8 6"></path></svg>
+            <h3>AI Plagiarism Checker</h3>
+          </div>
+          <p>Document comparison engine to detect similarity and paraphrasing using ML techniques.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect></svg>
+            <h3>Unity Game (Personal Project)</h3>
+          </div>
+          <p>Interactive Unity game made using C# — mechanics, animations, and level design implemented.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications" class="section container">
+      <h2>Certifications & Internships</h2>
+      <ul>
+        <li>Gaming AR/VR (ARK UNITY)</li>
+        <li>Cyber Security (Deloitte)</li>
+        <li>Python with Data Science (IBM)</li>
+        <li>AWS Academy – Data Analytics Virtual Internship</li>
+        <li>AWS Academy – AI/ML Virtual Internship</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact Me</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info card">
+          <p><svg class="small-icon" viewBox="0 0 24 24"><path d="M2 12h20"></path></svg><strong>Email:</strong> sukumarjabardasth@gmail.com</p>
+          <p><svg class="small-icon" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"></path></svg><strong>Phone:</strong> 6303379681</p>
+          <p><svg class="small-icon" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"></path></svg><strong>Languages:</strong> English, Telugu, Hindi</p>
+        </div>
+
+        <!-- Contact form posts to contact.php -->
+        <form id="contactForm" action="contact.php" method="post" class="contact-form" novalidate>
+          <label><span>Name</span><input type="text" name="name" required maxlength="100" /></label>
+          <label><span>Email</span><input type="email" name="email" required maxlength="120" /></label>
+          <label><span>Phone</span><input type="tel" name="phone" maxlength="20" /></label>
+          <label><span>Message</span><textarea name="message" rows="5" required maxlength="1000"></textarea></label>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Sukumar Modadugu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // small smooth-scrolling and reveal animations
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // reveal on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card, .section h2, .photo-collage img, .hero-photo').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
